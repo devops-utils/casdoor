@@ -243,6 +243,7 @@ func (l *ldapConn) GetLdapUsers(baseDn string) ([]ldapUser, error) {
 			case "uidNumber":
 				ldapUserItem.UidNumber = attribute.Values[0]
 			case "uid":
+				ldapUserItem.Uid = attribute.Values[0]
 			case "sAMAccountName":
 				ldapUserItem.Uid = attribute.Values[0]
 			case "cn":
@@ -250,6 +251,7 @@ func (l *ldapConn) GetLdapUsers(baseDn string) ([]ldapUser, error) {
 			case "gidNumber":
 				ldapUserItem.GidNumber = attribute.Values[0]
 			case "entryUUID":
+				ldapUserItem.Uuid = attribute.Values[0]
 			case "objectGUID":
 				ldapUserItem.Uuid = attribute.Values[0]
 			case "mail":
@@ -269,9 +271,6 @@ func (l *ldapConn) GetLdapUsers(baseDn string) ([]ldapUser, error) {
 			case "postalAddress":
 				ldapUserItem.PostalAddress = attribute.Values[0]
 			}
-		}
-		if ldapUserItem.Uuid == "" {
-			ldapUserItem.Uuid = ldapUserItem.Cn
 		}
 		logs.Debug(fmt.Sprintf("ldapUserItem.Uid %s, ldapUserItem.UidNumber %s", ldapUserItem.Uid, ldapUserItem.UidNumber))
 		ldapUsers = append(ldapUsers, ldapUserItem)
