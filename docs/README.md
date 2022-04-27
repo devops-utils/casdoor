@@ -48,6 +48,14 @@ admin
 https://his.7otech.com/prod-api/callback
 ```
 
+```
+openldap entryUUID
+entryUUID
+objectGUID
+
+https://stackoverflow.com/questions/39221697/retrieve-internal-attributesentryuuid-from-openldap-server
+```
+
 ```shell
 go help
 Go is a tool for managing Go source code.

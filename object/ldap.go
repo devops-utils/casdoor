@@ -267,6 +267,9 @@ func (l *ldapConn) GetLdapUsers(baseDn string) ([]ldapUser, error) {
 				ldapUserItem.PostalAddress = attribute.Values[0]
 			}
 		}
+		if ldapUserItem.Uuid == "" {
+			ldapUserItem.Uuid = ldapUserItem.Cn
+		}
 		ldapUsers = append(ldapUsers, ldapUserItem)
 	}
 
