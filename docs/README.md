@@ -29,6 +29,9 @@ create database casdoor default character set utf8mb4 collate utf8mb4_unicode_ci
 use casdoor
 show tables;
 
+sudo docker tag docker_casdoor yiluxiangbei/casdoor:v1.0
+sudo docker push yiluxiangbei/casdoor:v1.0
+
 GOPROXY=https://goproxy.cn,direct
 go build
 
@@ -47,6 +50,8 @@ admin
 123
 
 https://his.7otech.com/prod-api/callback
+
+docker rmi `docker images | grep none | awk '{print $3}'`
 ```
 
 ```
