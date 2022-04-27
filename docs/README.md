@@ -15,6 +15,17 @@ sudo docker-compose stop casdoor
 
 sudo docker-compose logs -f
 
+http://49.232.6.131:8091/
+http://172.21.16.11:8091/
+admin
+123
+
+https://his.7otech.com/prod-api/callback
+
+mysql -h127.0.0.1 -uroot -p -P3313
+123456
+create database casdoor default character set utf8mb4 collate utf8mb4_unicode_ci;
+
 GOPROXY=https://goproxy.cn,direct
 go build
 
@@ -22,9 +33,11 @@ go mod init
 go mod vendor
 
 LATEST-RELEASE=curl xxx
-docker run -p 8000:8000 casbin/casdoor-all-in-one:$LATEST-RELEASE
+sudo docker run -p 8000:8000 casbin/casdoor-all-in-one:$LATEST-RELEASE
 
 sudo docker run -p 8091:8000 casbin/casdoor-all-in-one
+sudo docker stop 4c9525794b6a
+sudo docker rm 4c9525794b6a
 http://49.232.6.131:8091/
 http://172.21.16.11:8091/
 admin
