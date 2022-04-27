@@ -4,6 +4,12 @@ sudo docker-compose up
 sudo docker-compose up -d
 sudo docker-compose down
 
+sudo docker build -f Dockerfile-golang -t yiluxiangbei/casdoor-golang:v1.0 .
+sudo docker build -f Dockerfile-node -t yiluxiangbei/casdoor-node:v1.0 .
+
+sudo docker push yiluxiangbei/casdoor-golang:v1.0
+sudo docker push yiluxiangbei/casdoor-node:v1.0
+
 sudo docker-compose build
 
 sudo docker-compose up casdoor-mysql

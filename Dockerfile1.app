@@ -1,14 +1,12 @@
-FROM golang:1.17.5 AS BACK
+FROM yiluxiangbei/casdoor-golang:v1.0 AS BACK
 WORKDIR /go/src/casdoor
-COPY docs/sources.list /etc/apt/sources.list
 COPY . .
-RUN ./build.sh && apt update && apt install wait-for-it && chmod +x /usr/bin/wait-for-it
+RUN ./build.sh
 
-FROM node:16.13.0 AS FRONT
+FROM yiluxiangbei/casdoor-node:v1.0 AS FRONT
 WORKDIR /web
 COPY ./web .
-RUN yarn config set registry https://registry.npmmirror.com
-RUN yarn install && yarn run build
+RUN yarn run build
 
 
 FROM yiluxiangbei/casdoor:v1.0

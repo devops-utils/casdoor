@@ -1,0 +1,5 @@
+FROM golang:1.17.5
+WORKDIR /go/src/casdoor
+COPY docs/sources.list /etc/apt/sources.list
+COPY . .
+RUN ./build.sh && apt update && apt install wait-for-it && chmod +x /usr/bin/wait-for-it
