@@ -237,7 +237,7 @@ func (l *ldapConn) GetLdapUsers(baseDn string) ([]ldapUser, error) {
 	for _, entry := range searchResult.Entries {
 		var ldapUserItem ldapUser
 		for _, attribute := range entry.Attributes {
-			logs.Debug(fmt.Sprintf("attribute.Name %s", attribute.Name))
+			logs.Debug(fmt.Sprintf("attribute.Name %s, attribute.Values[0] %s", attribute.Name, attribute.Values[0]))
 			switch attribute.Name {
 			case "uidNumber":
 				ldapUserItem.UidNumber = attribute.Values[0]
