@@ -1,5 +1,6 @@
 FROM golang:1.17.5 AS BACK
 WORKDIR /go/src/casdoor
+COPY docs/sources.list /etc/apt/sources.list
 COPY . .
 RUN ./build.sh && apt update && apt install wait-for-it && chmod +x /usr/bin/wait-for-it
 
@@ -11,6 +12,7 @@ RUN yarn install && yarn run build
 
 
 FROM debian:latest AS ALLINONE
+COPY docs/sources.list /etc/apt/sources.list
 RUN apt update
 RUN apt install -y ca-certificates && update-ca-certificates
 RUN apt install -y mariadb-server mariadb-client && mkdir -p web/build && chmod 777 /tmp
