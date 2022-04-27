@@ -13,6 +13,8 @@ sudo docker-compose up casdoor
 sudo docker-compose up -d casdoor
 sudo docker-compose stop casdoor
 
+sudo docker-compose logs -f
+
 LATEST-RELEASE=curl xxx
 docker run -p 8000:8000 casbin/casdoor-all-in-one:$LATEST-RELEASE
 

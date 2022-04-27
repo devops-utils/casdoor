@@ -2,6 +2,7 @@ version: '3.1'
 services:
   casdoor:
     restart: always
+    container_name: casdoor
     build:
       context: ../
       dockerfile: Dockerfile
