@@ -25,6 +25,8 @@ https://his.7otech.com/prod-api/callback
 mysql -h127.0.0.1 -uroot -p -P3313
 123456
 create database casdoor default character set utf8mb4 collate utf8mb4_unicode_ci;
+use casdoor
+show tables;
 
 GOPROXY=https://goproxy.cn,direct
 go build

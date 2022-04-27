@@ -1,0 +1,23 @@
+show tables;
++---------------------+
+| Tables_in_casdoor   |
++---------------------+
+| application         |
+| casbin_rule         |
+| cert                |
+| ldap                |
+| organization        |
+| payment             |
+| permission          |
+| product             |
+| provider            |
+| record              |
+| resource            |
+| role                |
+| syncer              |
+| token               |
+| user                |
+| verification_record |
+| webhook             |
++---------------------+
+17 rows in set (0.00 sec)
