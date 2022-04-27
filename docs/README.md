@@ -11,6 +11,7 @@ sudo docker push yiluxiangbei/casdoor-golang:v1.0
 sudo docker push yiluxiangbei/casdoor-node:v1.0
 
 sudo docker-compose build
+sudo docker-compose build --no-cache
 
 sudo docker-compose up casdoor-mysql
 sudo docker-compose up -d casdoor-mysql
