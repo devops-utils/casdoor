@@ -99,6 +99,7 @@ func LdapUsersToLdapRespUsers(users []ldapUser) []LdapRespUser {
 
 	res := make([]LdapRespUser, 0)
 	for _, user := range users {
+		logs.Debug(fmt.Sprintf("ldapUser Name: %s %s", user.Uid, user.UidNumber))
 		res = append(res, LdapRespUser{
 			UidNumber: user.UidNumber,
 			Uid:       user.Uid,
