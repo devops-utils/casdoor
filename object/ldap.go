@@ -17,6 +17,7 @@ package object
 import (
 	"errors"
 	"fmt"
+	"github.com/astaxie/beego/logs"
 	"strings"
 
 	"github.com/casdoor/casdoor/util"
@@ -236,6 +237,7 @@ func (l *ldapConn) GetLdapUsers(baseDn string) ([]ldapUser, error) {
 	for _, entry := range searchResult.Entries {
 		var ldapUserItem ldapUser
 		for _, attribute := range entry.Attributes {
+			logs.Debug(fmt.Sprintf("attribute.Name %s", attribute.Name))
 			switch attribute.Name {
 			case "uidNumber":
 				ldapUserItem.UidNumber = attribute.Values[0]
