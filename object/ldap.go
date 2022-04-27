@@ -388,6 +388,7 @@ func SyncLdapUsers(owner string, users []LdapRespUser) (*[]LdapRespUser, *[]Ldap
 				}
 			}
 		}
+		logs.Debug(fmt.Sprintf("Name: %s", buildLdapUserName(user.Uid, user.UidNumber)))
 		if !found && !AddUser(&User{
 			Owner:       owner,
 			Name:        buildLdapUserName(user.Uid, user.UidNumber),
