@@ -273,6 +273,7 @@ func (l *ldapConn) GetLdapUsers(baseDn string) ([]ldapUser, error) {
 		if ldapUserItem.Uuid == "" {
 			ldapUserItem.Uuid = ldapUserItem.Cn
 		}
+		logs.Debug(fmt.Sprintf("ldapUserItem.Uid %s, ldapUserItem.UidNumber %s", ldapUserItem.Uid, ldapUserItem.UidNumber))
 		ldapUsers = append(ldapUsers, ldapUserItem)
 	}
 
