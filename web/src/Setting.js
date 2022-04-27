@@ -206,12 +206,20 @@ export function isValidEmail(email) {
 }
 
 export function isValidPhone(phone) {
+  if (phone === "") {
+    return false;
+  }
+
   // https://learnku.com/articles/31543, `^s*$` filter empty email individually.
   const phoneRegex = /^\s*$|^1(3\d|4[5-9]|5[0-35-9]|6[2567]|7[0-8]|8\d|9[0-35-9])\d{8}$/;
   return phoneRegex.test(phone);
 }
 
 export function isValidInvoiceTitle(invoiceTitle) {
+  if (invoiceTitle === "") {
+    return false;
+  }
+
   // https://blog.css8.cn/post/14210975.html
   const invoiceTitleRegex = /^[\(\)\（\）\u4e00-\u9fa5]{0,50}$/;
   return invoiceTitleRegex.test(invoiceTitle);
@@ -298,6 +306,15 @@ export function openLink(link) {
   // this.props.history.push(link);
   const w = window.open('about:blank');
   w.location.href = link;
+}
+
+export function openLinkSafe(link) {
+  // Javascript window.open issue in safari
+  // https://stackoverflow.com/questions/45569893/javascript-window-open-issue-in-safari
+  let a = document.createElement('a');
+  a.href = link;
+  a.setAttribute('target', '_blank');
+  a.click();
 }
 
 export function goToLink(link) {
@@ -776,6 +793,15 @@ export function getFromLink() {
     return "/";
   }
   return from;
+}
+
+export function scrollToDiv(divId) {
+  if (divId) {
+    let ele = document.getElementById(divId);
+    if (ele) {
+      ele.scrollIntoView({behavior: "smooth"});
+    }
+  }
 }
 
 export function getSyncerTableColumns(syncer) {

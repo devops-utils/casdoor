@@ -53,6 +53,7 @@ type Payment struct {
 	InvoiceTitle  string `xorm:"varchar(100)" json:"invoiceTitle"`
 	InvoiceTaxId  string `xorm:"varchar(100)" json:"invoiceTaxId"`
 	InvoiceRemark string `xorm:"varchar(100)" json:"invoiceRemark"`
+	InvoiceUrl    string `xorm:"varchar(255)" json:"invoiceUrl"`
 }
 
 func GetPaymentCount(owner, field, value string) int {
@@ -204,6 +205,44 @@ func NotifyPayment(request *http.Request, body []byte, owner string, providerNam
 
 	ok := err == nil
 	return ok
+}
+
+func invoicePayment(payment *Payment) (string, error) {
+	provider := getProvider(payment.Owner, payment.Provider)
+	if provider == nil {
+		return "", fmt.Errorf("the payment provider: %s does not exist", payment.Provider)
+	}
+
+	pProvider, _, err := provider.getPaymentProvider()
+	if err != nil {
+		return "", err
+	}
+
+	invoiceUrl, err := pProvider.GetInvoice(payment.Name, payment.PersonName, payment.PersonIdCard, payment.PersonEmail, payment.PersonPhone, payment.InvoiceType, payment.InvoiceTitle, payment.InvoiceTaxId)
+	if err != nil {
+		return "", err
+	}
+
+	return invoiceUrl, nil
+}
+
+func InvoicePayment(payment *Payment) error {
+	if payment.State != "Paid" {
+		return fmt.Errorf("the payment state is supposed to be: \"%s\", got: \"%s\"", "Paid", payment.State)
+	}
+
+	invoiceUrl, err := invoicePayment(payment)
+	if err != nil {
+		return err
+	}
+
+	payment.InvoiceUrl = invoiceUrl
+	affected := UpdatePayment(payment.GetId(), payment)
+	if !affected {
+		return fmt.Errorf("failed to update the payment: %s", payment.Name)
+	}
+
+	return nil
 }
 
 func (payment *Payment) GetId() string {
