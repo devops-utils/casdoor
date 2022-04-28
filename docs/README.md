@@ -45,6 +45,9 @@ go build
 go mod init
 go mod vendor
 
+cd web
+yarn install
+
 LATEST-RELEASE=curl xxx
 sudo docker run -p 8000:8000 casbin/casdoor-all-in-one:$LATEST-RELEASE
 
