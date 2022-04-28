@@ -36,6 +36,8 @@ create database casdoor default character set utf8mb4 collate utf8mb4_unicode_ci
 use casdoor
 show tables;
 
+update application set display_name='Pelican',logo='https://www.7otech.com/pelican.jpeg',homepage_url='https://pelican.7otech.com';
+
 sudo docker tag docker_casdoor yiluxiangbei/casdoor:v1.0
 sudo docker push yiluxiangbei/casdoor:v1.0
 
