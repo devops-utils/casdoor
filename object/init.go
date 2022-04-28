@@ -96,7 +96,7 @@ func initBuiltInApplication() {
 		Name:           "app-built-in",
 		CreatedTime:    util.GetCurrentTime(),
 		DisplayName:    "Pelican",
-		Logo:           "https://cdn.casbin.com/logo/logo_1024x256.png",
+		Logo:           "https://www.7otech.com/pelican.jpeg",
 		HomepageUrl:    "https://casdoor.org",
 		Organization:   "built-in",
 		Cert:           "cert-built-in",
