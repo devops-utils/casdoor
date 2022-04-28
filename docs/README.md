@@ -36,7 +36,28 @@ create database casdoor default character set utf8mb4 collate utf8mb4_unicode_ci
 use casdoor
 show tables;
 
+select * from application;
+select * from casbin_rule;
+select * from cert;
+select * from ldap;
+select * from organization;
+select * from payment;
+select * from permission;
+select * from product;
+select * from provider;
+select * from record;
+select * from resource;
+select * from role;
+select * from syncer;
+select * from token;
+select * from user;
+select * from verification_record;
+select * from webhook;
+
 update application set display_name='Pelican',logo='https://www.7otech.com/pelican.jpeg',homepage_url='https://pelican.7otech.com';
+update organization set favicon='https://www.7otech.com/favicon.ico',default_avatar='https://www.7otech.com/pelican.svg';
+update payment set return_url='https://pelican.7otech.com/payments';
+update user set avatar='https://www.7otech.com/pelican.svg';
 
 sudo docker tag docker_casdoor yiluxiangbei/casdoor:v1.0
 sudo docker push yiluxiangbei/casdoor:v1.0
