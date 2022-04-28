@@ -79,6 +79,7 @@ sudo docker stop 4c9525794b6a
 sudo docker rm 4c9525794b6a
 http://49.232.6.131:8091/
 http://172.21.16.11:8091/
+https://pelican.7otech.com/
 admin
 123
 
