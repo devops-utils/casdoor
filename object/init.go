@@ -97,7 +97,7 @@ func initBuiltInApplication() {
 		CreatedTime:    util.GetCurrentTime(),
 		DisplayName:    "Pelican",
 		Logo:           "https://www.7otech.com/pelican.jpeg",
-		HomepageUrl:    "https://casdoor.org",
+		HomepageUrl:    "https://pelican.7otech.com",
 		Organization:   "built-in",
 		Cert:           "cert-built-in",
 		EnablePassword: true,
