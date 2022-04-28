@@ -45,7 +45,7 @@ func initBuiltInOrganization() bool {
 		Favicon:       "https://cdn.casbin.com/static/favicon.ico",
 		PasswordType:  "plain",
 		PhonePrefix:   "86",
-		DefaultAvatar: "https://casbin.org/img/casbin.svg",
+		DefaultAvatar: "https://www.7otech.com/pelican.svg",
 		Tags:          []string{},
 	}
 	AddOrganization(organization)
@@ -66,7 +66,7 @@ func initBuiltInUser() {
 		Type:              "normal-user",
 		Password:          "123",
 		DisplayName:       "Admin",
-		Avatar:            "https://casbin.org/img/casbin.svg",
+		Avatar:            "https://www.7otech.com/pelican.svg",
 		Email:             "admin@example.com",
 		Phone:             "12345678910",
 		Address:           []string{},

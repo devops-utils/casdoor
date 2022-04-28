@@ -102,7 +102,7 @@ func (idp *CasdoorIdProvider) GetToken(code string) (*oauth2.Token, error) {
     "name": "admin",
     "preferred_username": "Admin",
     "email": "admin@example.com",
-    "picture": "https://casbin.org/img/casbin.svg",
+    "picture": "https://www.7otech.com/pelican.svg",
     "address": "Guangdong",
     "phone": "12345678910"
 }

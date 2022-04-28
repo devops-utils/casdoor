@@ -35,7 +35,7 @@ class OrganizationListPage extends BaseListPage {
       passwordType: "plain",
       PasswordSalt: "",
       phonePrefix: "86",
-      defaultAvatar: "https://casbin.org/img/casbin.svg",
+      defaultAvatar: "https://www.7otech.com/pelican.svg",
       tags: [],
       masterPassword: "",
       enableSoftDeletion: false,
