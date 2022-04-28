@@ -42,7 +42,7 @@ func initBuiltInOrganization() bool {
 		CreatedTime:   util.GetCurrentTime(),
 		DisplayName:   "Built-in Organization",
 		WebsiteUrl:    "https://example.com",
-		Favicon:       "https://cdn.casbin.com/static/favicon.ico",
+		Favicon:       "https://www.7otech.com/favicon.ico",
 		PasswordType:  "plain",
 		PhonePrefix:   "86",
 		DefaultAvatar: "https://www.7otech.com/pelican.svg",
