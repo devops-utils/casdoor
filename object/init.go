@@ -95,7 +95,7 @@ func initBuiltInApplication() {
 		Owner:          "admin",
 		Name:           "app-built-in",
 		CreatedTime:    util.GetCurrentTime(),
-		DisplayName:    "Casdoor",
+		DisplayName:    "Pelican",
 		Logo:           "https://cdn.casbin.com/logo/logo_1024x256.png",
 		HomepageUrl:    "https://casdoor.org",
 		Organization:   "built-in",
