@@ -16,8 +16,10 @@ package controllers
 
 import (
 	"encoding/json"
+	"fmt"
 	"net/http"
 
+	"github.com/astaxie/beego/logs"
 	"github.com/astaxie/beego/utils/pagination"
 	"github.com/casdoor/casdoor/object"
 	"github.com/casdoor/casdoor/util"
@@ -142,6 +144,8 @@ func (c *ApiController) GetOAuthCode() {
 	scope := c.Input().Get("scope")
 	state := c.Input().Get("state")
 	nonce := c.Input().Get("nonce")
+
+	logs.Info(fmt.Sprintf("redirectUri:%s", redirectUri))
 
 	challengeMethod := c.Input().Get("code_challenge_method")
 	codeChallenge := c.Input().Get("code_challenge")
