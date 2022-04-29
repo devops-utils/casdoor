@@ -85,6 +85,8 @@ admin
 
 https://his.7otech.com/prod-api/callback
 
+Yolov5_DeepSort_Pytorch
+
 docker rmi `docker images | grep none | awk '{print $3}'`
 ```
 
