@@ -14,9 +14,9 @@
 
 // Package routers
 // @APIVersion 1.0.0
-// @Title Casdoor API
-// @Description Documentation of Casdoor API
-// @Contact admin@casbin.org
+// @Title Pelican API
+// @Description Documentation of Pelican API
+// @Contact admin@7otech.com
 package routers
 
 import (
